@@ -1,6 +1,6 @@
 # AR Interface for Assisting Remote Robot (KINOVA Gen3) Manipulation
 
-![image](https://github.com/GOPHER-System-Intergration/haptic-AR-Vive/blob/main/Augmented-Reality/AR.jpg)
+![image](https://github.com/tclin0207/Haptic-AR/blob/main/Augmented-Reality/AR.jpg)
 
 ## Preparation
 1. Plugin the RealSense camera (Tested on D435)
@@ -77,5 +77,5 @@ cd your_worklspace/
 python ar_interface.py
 ```
 
-![image](https://github.com/GOPHER-System-Intergration/haptic-AR-Vive/blob/main/Augmented-Reality/AR_Interface.png)
+![image](https://github.com/tclin0207/Haptic-AR/blob/main/Augmented-Reality/AR_Interface.png)
 
