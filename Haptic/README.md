@@ -1,16 +1,40 @@
-# Haptic and Augmented Reality Visual Cues for Remote Manipulation via Motion Tracking Interface
-Here we organize the source code for the robot control interface using the HTC Vive handheld controller as well as the haptic and AR visual cues to represent four types of information critical to the reach-and-grasp remote manipulation task. 
+# Haptic Feedback for Assisting Remote Robot (KINOVA Gen3) Manipulation
 
-For detailed information, please check out the published paper here: [10.1109/ICRA46639.2022.9811669](https://ieeexplore.ieee.org/abstract/document/9811669)
+![image](https://github.com/tclin0207/Haptic-AR/blob/main/Haptic/Haptic.jpg)
 
-## System Architecture
-![image](https://github.com/tclin0207/Haptic-AR/blob/main/SystemArchitecture.jpg)
+## Preparation
+1. Completed the setup for [Control Interface](https://github.com/tclin0207/DAC/tree/main/Control-Interface)
+2. Replace the udp_server.cs for haptic
 
-## Remote Manipulation System
-Operational system I (Ubuntu 18.04-ROS melodic)\
-Robot platform: KINOVA Gen3 robot (7 DoF) with Robotiq 2F-85\
-Camera: RealSense D435
-
-Operational system II (Windows 10-Unity 2019)\
-Control interface: HTC Vive handheld controller\
-Visual feedback: 27-inch monitoer display
+## Launch the KINOVA robotic arm and UDP server
+In the first terminal, launch the KINOVA robotic arm
+```bash
+cd kinova_ws/
+source devel/setup.bash
+roslaunch kortex_driver kortex_driver.launch
+```
+In the second terminal, launch the socket connection with distance publisher (change the IP address accordingly)
+```bash
+cd kinova_ws/
+source devel/setup.bash
+cd src/ros_kortex/kortex_examples/src/full_arm/
+python sockect_connection_haptic.py
+```
+## Stream realsense camera feed to Unity
+In the third terminal, launch the realsense
+```bash
+roslaunch realsense2_camera rs_camera.launch 
+```
+In the fourth terminal, launch the streaming (change the IP address accordingly)
+```bash
+cd your_workspace/
+python ui_cam_stream.py
+```
+## Lauch the Vive teleoperation interface
+In the fifth terminal, launch the vive interface
+```bash
+cd kinova_ws/
+source devel/setup.bash
+cd src/ros_kortex/kortex_examples/src/full_arm/
+python Vive_teleoperation.py
+```
