@@ -3,7 +3,7 @@
 ![image](https://github.com/tclin0207/Haptic-AR/blob/main/Haptic/Haptic.jpg)
 
 ## Preparation
-1. Completed the setup for [Control Interface](https://github.com/tclin0207/DAC/tree/main/Control-Interface)
+1. Completed the setup for [Control Interface](https://github.com/GOPHER-System-Intergration/haptic-AR-Vive/tree/main/Control-Interface)
 2. Replace the udp_server.cs for haptic
 
 ## Launch the KINOVA robotic arm and UDP server
